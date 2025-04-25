@@ -1,0 +1,238 @@
+:root {
+    --dawn-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --morning-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    --afternoon-gradient: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    --evening-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    --night-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    --current-prayer: #ffffff;
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text-color);
+    transition: background 0.5s ease;
+    background: var(--night-gradient);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#greeting {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0px;
+    text-align: left
+}
+
+#date {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+#location {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+}
+
+#current-time {
+    font-size: 8.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prayer-times {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.prayer-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.prayer-card:hover {
+    transform: translateY(-5px);
+}
+
+.prayer-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.prayer-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.current {
+    background: var(--current-prayer);
+    color: #333;
+    font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#settings-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    transition: background 0.3s ease;
+}
+
+#settings-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Modal Styles */
+.settings-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#save-settings {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#save-settings:hover {
+    background: #45a049;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .prayer-times {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #greeting {
+        font-size: 1.5rem;
+    }
+    
+    #current-time {
+        font-size: 4rem;
+    }
+    
+    .prayer-name {
+        font-size: 1rem;
+    }
+    
+    .prayer-time {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .prayer-times {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waktu Sholat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="location">
+                <i class="fas fa-location-dot"></i>
+                <span id="city">Loading location...</span>
+            </div>
+            <h1 id="greeting">Assalamu'alaikum</h1>
+            <div id="date"></div>
+            <div id="current-time"></div>
+        </header>
+
+        <main>
+            <div class="prayer-times">
+                <div class="prayer-card" id="fajr">
+                    <div class="prayer-name">Subuh</div>
+                    <div class="prayer-time">--:--</div>
+                </div>
+                <div class="prayer-card" id="dhuhr">
+                    <div class="prayer-name">Dzuhur</div>
+                    <div class="prayer-time">--:--</div>
+                </div>
+                <div class="prayer-card" id="asr">
+                    <div class="prayer-name">Ashar</div>
+                    <div class="prayer-time">--:--</div>
+                </div>
+                <div class="prayer-card" id="maghrib">
+                    <div class="prayer-name">Maghrib</div>
+                    <div class="prayer-time">--:--</div>
+                </div>
+                <div class="prayer-card" id="isha">
+                    <div class="prayer-name">Isya</div>
+                    <div class="prayer-time">--:--</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="settings-btn"><i class="fas fa-gear"></i> Pengaturan</button>
+        </footer>
+
+        <div class="settings-modal" id="settings-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Pengaturan</h2>
+                <div class="form-group">
+                    <label for="city-select">Pilih Kota:</label>
+                    <select id="city-select">
+                        <option value="">Loading cities...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="method-select">Metode Perhitungan:</label>
+                    <select id="method-select">
+                        <option value="1">Kementerian Agama RI</option>
+                        <option value="2">Muhammadiyah</option>
+                        <option value="3">Persatuan Islam</option>
+                        <option value="4">NU</option>
+                        <option value="5">Umm al-Qura</option>
+                    </select>
+                </div>
+                <button id="save-settings">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
