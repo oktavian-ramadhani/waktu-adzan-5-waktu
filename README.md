@@ -14,3 +14,6 @@ Dengan tampilan yang sederhana dan elegan, pengguna dapat dengan mudah mengetahu
 
 # Screenshot
 ![image](https://github.com/user-attachments/assets/7638a50b-df0c-41cd-a765-60378e435be3)
+
+# Try Now
+https://oktavian-ramadhani.github.io/waktu-adzan-5-waktu/
